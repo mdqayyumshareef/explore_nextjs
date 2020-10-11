@@ -12,3 +12,7 @@
     font-size: 14px;
     font-weight: 400;
 }
+
+.navLink:hover {
+    text-decoration: underline;
+}
