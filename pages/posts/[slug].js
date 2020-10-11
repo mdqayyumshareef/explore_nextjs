@@ -1,11 +1,10 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
-import Header from '../../components/header'
 import axios from 'axios'
+import Head from 'next/head'
+import React from 'react'
+import Header from '../../components/header'
 
-export async function getServerSideProps(router) {
-    const { slug } = router.query;
+export async function getServerSideProps(context) {
+    const { slug } = context.query;
     const id = slug.split('-').pop();
     const result = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
     const data = result.data;
